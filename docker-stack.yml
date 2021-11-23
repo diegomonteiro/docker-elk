@@ -36,7 +36,7 @@ services:
       - source: logstash_pipeline
         target: /usr/share/logstash/pipeline/logstash.conf
     environment:
-      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+      LS_JAVA_OPTS: "-Xmx512m -Xms512m"
     networks:
       - elk
     deploy:
@@ -63,7 +63,7 @@ configs:
   logstash_config:
     file: ./logstash/config/logstash.yml
   logstash_pipeline:
-    file: ./logstash/pipeline/logstash.conf
+    file: ./logstash/pipeline/outorgas.conf
   kibana_config:
     file: ./kibana/config/kibana.yml
 
